@@ -12,124 +12,132 @@ from django.contrib import auth
 
 from datetime import date
 
-isAdmin = False
-isLoggedin = True
-userinfo = {
-    "username":"heman",
-    "userid":"880",
-    "blog_count":"67",
-}
+# from django.core.paginator import Paginator
 
-blogs=[
-    {
-        "blogid":"1234",
-        "title":"some random topic",
-        "content":"Aenean a metus quis metus mollis tempor. Quisque ornare consectetur posuere. Aliquam placerat metus in lorem ornare congue. Fusce in sem in ligula porttitor faucibus sit amet lacinia mi. Aenean viverra sapien et risus vulputate vulputate. Donec placerat mi tortor, eu auctor tortor sodales in. Mauris fermentum turpis in nisl interdum scelerisque in id metus. Proin ornare tortor magna, ac porttitor nibh auctor pulvinar.",
-        "date":{
-            "day":"11",
-            "month":"January",
-            "year":"2021"
-        },
-        "author":{
-            "username":"someguy",
-            "userid":"342"
-        }
-    },{
-        "blogid":"1235",
-        "title":"some random topic",
-        "content":"Aenean a metus quis metus mollis tempor. Quisque ornare consectetur posuere. Aliquam placerat metus in lorem ornare congue. Fusce in sem in ligula porttitor faucibus sit amet lacinia mi. Aenean viverra sapien et risus vulputate vulputate. Donec placerat mi tortor, eu auctor tortor sodales in. Mauris fermentum turpis in nisl interdum scelerisque in id metus. Proin ornare tortor magna, ac porttitor nibh auctor pulvinar.",
-        "date":{
-            "day":"18",
-            "month":"January",
-            "year":"2021"
-        },
-        "author":{
-            "username":"helloyou",
-            "userid":"127"
-        }
-    },{
-        "blogid":"1236",
-        "title":"some random topic",
-        "content":"Aenean a metus quis metus mollis tempor. Quisque ornare consectetur posuere. Aliquam placerat metus in lorem ornare congue. Fusce in sem in ligula porttitor faucibus sit amet lacinia mi. Aenean viverra sapien et risus vulputate vulputate. Donec placerat mi tortor, eu auctor tortor sodales in. Mauris fermentum turpis in nisl interdum scelerisque in id metus. Proin ornare tortor magna, ac porttitor nibh auctor pulvinar.",
-        "date":{
-            "day":"20",
-            "month":"December",
-            "year":"2020"
-        },
-        "author":{
-            "username":"manhim",
-            "userid":"667"
-        }
-    },{
-        "blogid":"1237",
-        "title":"some random topic",
-        "content":"Aenean a metus quis metus mollis tempor. Quisque ornare consectetur posuere. Aliquam placerat metus in lorem ornare congue. Fusce in sem in ligula porttitor faucibus sit amet lacinia mi. Aenean viverra sapien et risus vulputate vulputate. Donec placerat mi tortor, eu auctor tortor sodales in. Mauris fermentum turpis in nisl interdum scelerisque in id metus. Proin ornare tortor magna, ac porttitor nibh auctor pulvinar.",
-        "date":{
-            "day":"26",
-            "month":"December",
-            "year":"2020"
-        },
-        "author":{
-            "username":"yeswoman",
-            "userid":"389"
-        }
-    }
-]
+# isAdmin = False
+# isLoggedin = True
+# userinfo = {
+#     "username":"heman",
+#     "userid":"880",
+#     "blog_count":"67",
+# }
 
-users=[
-    {
-        "username":"geekgod",
-        "userid":"112",
-        "blog_count":"20",
-    },{
-        "username":"someguy",
-        "userid":"342",
-        "blog_count":"33"
-    },{
-        "username":"helloyou",
-        "userid":"127",
-        "blog_count":"13"
-    },{
-        "username":"manhim",
-        "userid":"667",
-        "blog_count":"9"
-    },{
-        "username":"yeswoman",
-        "userid":"389",
-        "blog_count":"14"
-    },
-]
+# blogs=[
+#     {
+#         "blogid":"1234",
+#         "title":"some random topic",
+#         "content":"Aenean a metus quis metus mollis tempor. Quisque ornare consectetur posuere. Aliquam placerat metus in lorem ornare congue. Fusce in sem in ligula porttitor faucibus sit amet lacinia mi. Aenean viverra sapien et risus vulputate vulputate. Donec placerat mi tortor, eu auctor tortor sodales in. Mauris fermentum turpis in nisl interdum scelerisque in id metus. Proin ornare tortor magna, ac porttitor nibh auctor pulvinar.",
+#         "date":{
+#             "day":"11",
+#             "month":"January",
+#             "year":"2021"
+#         },
+#         "author":{
+#             "username":"someguy",
+#             "userid":"342"
+#         }
+#     },{
+#         "blogid":"1235",
+#         "title":"some random topic",
+#         "content":"Aenean a metus quis metus mollis tempor. Quisque ornare consectetur posuere. Aliquam placerat metus in lorem ornare congue. Fusce in sem in ligula porttitor faucibus sit amet lacinia mi. Aenean viverra sapien et risus vulputate vulputate. Donec placerat mi tortor, eu auctor tortor sodales in. Mauris fermentum turpis in nisl interdum scelerisque in id metus. Proin ornare tortor magna, ac porttitor nibh auctor pulvinar.",
+#         "date":{
+#             "day":"18",
+#             "month":"January",
+#             "year":"2021"
+#         },
+#         "author":{
+#             "username":"helloyou",
+#             "userid":"127"
+#         }
+#     },{
+#         "blogid":"1236",
+#         "title":"some random topic",
+#         "content":"Aenean a metus quis metus mollis tempor. Quisque ornare consectetur posuere. Aliquam placerat metus in lorem ornare congue. Fusce in sem in ligula porttitor faucibus sit amet lacinia mi. Aenean viverra sapien et risus vulputate vulputate. Donec placerat mi tortor, eu auctor tortor sodales in. Mauris fermentum turpis in nisl interdum scelerisque in id metus. Proin ornare tortor magna, ac porttitor nibh auctor pulvinar.",
+#         "date":{
+#             "day":"20",
+#             "month":"December",
+#             "year":"2020"
+#         },
+#         "author":{
+#             "username":"manhim",
+#             "userid":"667"
+#         }
+#     },{
+#         "blogid":"1237",
+#         "title":"some random topic",
+#         "content":"Aenean a metus quis metus mollis tempor. Quisque ornare consectetur posuere. Aliquam placerat metus in lorem ornare congue. Fusce in sem in ligula porttitor faucibus sit amet lacinia mi. Aenean viverra sapien et risus vulputate vulputate. Donec placerat mi tortor, eu auctor tortor sodales in. Mauris fermentum turpis in nisl interdum scelerisque in id metus. Proin ornare tortor magna, ac porttitor nibh auctor pulvinar.",
+#         "date":{
+#             "day":"26",
+#             "month":"December",
+#             "year":"2020"
+#         },
+#         "author":{
+#             "username":"yeswoman",
+#             "userid":"389"
+#         }
+#     }
+# ]
 
-admins=[
-    {
-        "username":"someguy",
-        "userid":"342",
-        "blog_count":"33"
-    },{
-        "username":"helloyou",
-        "userid":"127",
-        "blog_count":"13"
-    },{
-        "username":"geekgod",
-        "userid":"112",
-        "blog_count":"20",
-    }
-]
+# users=[
+#     {
+#         "username":"geekgod",
+#         "userid":"112",
+#         "blog_count":"20",
+#     },{
+#         "username":"someguy",
+#         "userid":"342",
+#         "blog_count":"33"
+#     },{
+#         "username":"helloyou",
+#         "userid":"127",
+#         "blog_count":"13"
+#     },{
+#         "username":"manhim",
+#         "userid":"667",
+#         "blog_count":"9"
+#     },{
+#         "username":"yeswoman",
+#         "userid":"389",
+#         "blog_count":"14"
+#     },
+# ]
+
+# admins=[
+#     {
+#         "username":"someguy",
+#         "userid":"342",
+#         "blog_count":"33"
+#     },{
+#         "username":"helloyou",
+#         "userid":"127",
+#         "blog_count":"13"
+#     },{
+#         "username":"geekgod",
+#         "userid":"112",
+#         "blog_count":"20",
+#     }
+# ]
 
 #utility
 def getIsAdmin(request):
     currUser = AppUser.objects.filter(username=request.user)
     return currUser[0].isAdmin
 
+def getIsLoggedIn(request):
+    isLoggedin = False
+    if request.user != None:
+        isLoggedin=True
+    return isLoggedin
 
 #returns landing page
 def landing(request):
     userinfo = request.user
+    isAdmin=getIsAdmin(request)
+    isLoggedin = getIsLoggedIn(request)
     return render(request,'landing.html',{'isAdmin':isAdmin,'isLoggedin':isLoggedin,'userinfo':userinfo})
 
 def authenticate_user(request):
     if request.user.is_authenticated: 
-        print("here")
         return redirect('http://localhost:8000/blog/blogs')
     return render(request, 'auth.html')
 
@@ -142,7 +150,7 @@ def loginhandler(request):
         
         if users is not None:
             auth.login(request,users)
-            return redirect('http://localhost:8000/blog/')
+            return redirect('http://localhost:8000/blog/blogs/')
         else:
             return redirect('http://localhost:8000/blog/accounts/login/')
         
@@ -178,6 +186,7 @@ def explore(request):
         userinfo = request.user
         
         isAdmin=getIsAdmin(request)
+        isLoggedin = getIsLoggedIn(request)
         
         return render(request,'blogs.html',{'isAdmin':isAdmin,'isLoggedin':isLoggedin,'userinfo':userinfo,'blogs':blogs})
 
@@ -186,6 +195,7 @@ def readblog(request,blogid):
     blogs = Blog.objects.filter(blogid=blogid)
     userinfo = request.user
     isAdmin=getIsAdmin(request)
+    isLoggedin = getIsLoggedIn(request)
     return render(request,'readblog.html',{'isAdmin':isAdmin,'isLoggedin':isLoggedin,'userinfo':userinfo,'blog':blogs[0]})
 
 #blogger profile page
@@ -193,6 +203,7 @@ def blogger(request,username):
     blogs = Blog.objects.filter(author_id__username__contains=username)
     userinfo = request.user
     isAdmin=getIsAdmin(request)
+    isLoggedin = getIsLoggedIn(request)
     return render(request,'blogger.html',{'isAdmin':isAdmin,'isLoggedin':isLoggedin,'userinfo':userinfo,'blogs':blogs,'author':username})
 
 #shows all users
@@ -200,12 +211,14 @@ def allusers(request):
     users = AppUser.objects.all()
     userinfo = request.user
     isAdmin=getIsAdmin(request)
+    isLoggedin = getIsLoggedIn(request)
     return render(request,'users.html',{'isAdmin':isAdmin,'isLoggedin':isLoggedin,'userinfo':userinfo,'users':users})
 
 #returns compose page
 def compose(request):
     userinfo = request.user
     isAdmin=getIsAdmin(request)
+    isLoggedin = getIsLoggedIn(request)
     return render(request,'compose.html',{'isAdmin':isAdmin,'isLoggedin':isLoggedin,'userinfo':userinfo})
 
 #handles adding new blog
@@ -240,6 +253,7 @@ def alladmins(request):
     admins = AppUser.objects.filter(isAdmin=True)
     userinfo = request.user
     isAdmin=getIsAdmin(request)
+    isLoggedin = getIsLoggedIn(request)
     return render(request,'adminlist.html',{'isAdmin':isAdmin,'isLoggedin':isLoggedin,'userinfo':userinfo,'admins':admins})
 
 def logout(request):
